@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title><%=title%></title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/styles.css" rel="stylesheet">
+	</head>
+	<body>
+<header class="navbar navbar-bright navbar-fixed-top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">Home</a>
+    </div>
+    <nav class="collapse navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        <%for(i=0;i<nav.length;i++){%>
+        <li>
+          <a href="<%=nav[i].link%>"><%=nav[i].name%></a>
+        </li>
+        <%}%>
+      </ul>
+      <ul class="nav navbar-right navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
+          <ul class="dropdown-menu" style="padding:12px;">
+            <form class="form-inline">
+              <button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button><input type="text" class="form-control pull-left" placeholder="Search">
+            </form>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div id="masthead">  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <h1>Add Author
+          <p class="lead"></p>
+        </h1>
+      </div>
+      <div class="col-md-5">
+        <div class="well well-lg"> 
+          <div class="row">
+            <div class="col-sm-12">
+              
+			
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div><!-- /cont -->
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="top-spacer"> </div>
+      </div>
+    </div> 
+  </div><!-- /cont -->
+  
+</div>
+
+
+<div class="container">
+  <div class="row">
+    
+    <div class="col-md-12"> 
+      
+      <div class="panel">
+        <div class="panel-body">
+          
+          
+          
+          <!--/stories-->
+         
+
+          <div class="col-lg-3 loginmargin" id="fid">
+            <form action="/src/views/index.ejs" onsubmit="return validate()" >
+              <div class="form-group">
+                <label for="inputEmail">Author</label>
+                <input type="text" class="form-control" id="inputauthor" >
+                <label id="author" style="color:red;visibility:hidden">Invalid</label>
+              
+            </div>
+            <div class="form-group">
+              <label for="inputEmail">Nationality</label>
+              <input type="text" class="form-control" id="inputnation" >
+              <label id="nation" style="color:red;visibility:hidden">Invalid</label>
+            
+          </div>
+          
+          <div class="form-group">
+            <label for="inputEmail">Genre</label>
+            <input type="text" class="form-control" id="inputgenres">
+            <label id="genres" style="color:red;visibility:hidden">Invalid</label>
+          
+        </div>
+        <div class="form-group">
+          <label for="inputEmail">Image</label>
+          <input type="file" id="inputimgs">
+          <label id="imgs" style="color:red;visibility:hidden">Invalid</label>
+        
+      </div>
+        <div class="form-group">
+          <label for="inputEmail">About</label>
+          <input type="text" class="form-control" id="inputabouts">
+          <label id="abouts" style="color:red;visibility:hidden">Invalid</label>
+        
+      </div>
+      
+        
+              <button type="submit" class="btn btn-primary">Add Author</button>
+          </form>
+        </div>
+         
+          <hr>
+          
+          
+          <!--/stories-->
+          
+          
+        
+        
+          
+        </div>
+      </div>
+                                                                                       
+	                                                
+                                                      
+   	</div><!--/col-12-->
+  </div>
+</div>
+                                                
+                                                                                
+
+
+<hr>
+
+
+	<!-- script references -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+    <script>
+      function validate()
+      {  
+          var auth=document.getElementById("inputauthor").value;
+          var nation=document.getElementById("inputnation").value;
+          var genres=document.getElementById("inputgenres").value;
+          var abouts=document.getElementById("inputabouts").value;
+          var images=document.getElementById("inputimgs").value;
+          
+          
+          
+          
+            
+          if(genres=="" || abouts=="" || imgs=="" || auth=="" || nation=="")
+          {
+              document.getElementById("author").innerHTML="Invalid";
+              document.getElementById("author").style.visibility="visible";
+              document.getElementById("author").style.color="red";
+              document.getElementById("nation").innerHTML="Invalid";
+              document.getElementById("nation").style.visibility="visible";
+              document.getElementById("nation").style.color="red";
+              document.getElementById("genres").innerHTML="Invalid";
+              document.getElementById("genres").style.visibility="visible";
+              document.getElementById("genres").style.color="red";
+              document.getElementById("abouts").innerHTML="Invalid";
+              document.getElementById("abouts").style.visibility="visible";
+              document.getElementById("abouts").style.color="red";
+             
+             
+          }
+          if((auth.length <=2) || (auth.length > 20))
+          {
+          document.getElementById("author").innerHTML="Invalid";
+          document.getElementById("author").style.visibility="visible";
+          document.getElementById("author").style.color="red";
+          return false;
+          }
+          if(!isNaN(auth))
+          {
+          document.getElementById("author").innerHTML="Invalid";
+          document.getElementById("author").style.visibility="visible";
+          document.getElementById("author").style.color="red";
+          return false;
+          }
+          if((auth.length > 2) || (auth.length <= 20))
+          {
+          document.getElementById("author").innerHTML="valid";
+          document.getElementById("author").style.visibility="visible";
+          document.getElementById("author").style.color="green";
+      
+          }
+         
+          if((nation.length <=2) || (nation.length > 20))
+          {
+          document.getElementById("nation").innerHTML="Invalid";
+          document.getElementById("nation").style.visibility="visible";
+          document.getElementById("nation").style.color="red";
+          return false;
+          }
+          if(!isNaN(nation))
+          {
+          document.getElementById("nation").innerHTML="Invalid";
+          document.getElementById("nation").style.visibility="visible";
+          document.getElementById("nation").style.color="red";
+          return false;
+          }
+          if((nation.length > 2) || (nation.length <= 20))
+          {
+          document.getElementById("nation").innerHTML="valid";
+          document.getElementById("nation").style.visibility="visible";
+          document.getElementById("nation").style.color="green";
+          
+          }
+          if((genres.length <=2) || (genres.length > 20))
+          {
+          document.getElementById("genres").innerHTML="Invalid";
+          document.getElementById("genres").style.visibility="visible";
+          document.getElementById("genres").style.color="red";
+          return false;
+          }
+          if(!isNaN(genres))
+          {
+          document.getElementById("genres").innerHTML="Invalid";
+          document.getElementById("genres").style.visibility="visible";
+          document.getElementById("genres").style.color="red";
+          return false;
+          }
+          if((genres.length > 2) || (genres.length <= 20))
+          {
+          document.getElementById("genres").innerHTML="valid";
+          document.getElementById("genres").style.visibility="visible";
+          document.getElementById("genres").style.color="green";
+      
+          }
+          if((abouts.length <=2) || (abouts.length > 100))
+          {
+          document.getElementById("abouts").innerHTML="Invalid";
+          document.getElementById("abouts").style.visibility="visible";
+          document.getElementById("abouts").style.color="red";
+          return false;
+          }
+          if(!isNaN(abouts))
+          {
+          document.getElementById("abouts").innerHTML="Invalid";
+          document.getElementById("abouts").style.visibility="visible";
+          document.getElementById("abouts").style.color="red";
+          return false;
+          }
+          if((abouts.length > 2) || (abouts.length <= 20))
+          {
+          document.getElementById("abouts").innerHTML="valid";
+          document.getElementById("abouts").style.visibility="visible";
+          document.getElementById("abouts").style.color="green";
+      
+          }
+         
+              
+              
+        }
+          
+  
+      </script>
+	</body>
+</html>

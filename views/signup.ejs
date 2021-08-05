@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title><%=title%></title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/styles.css" rel="stylesheet">
+	</head>
+	<body>
+<header class="navbar navbar-bright navbar-fixed-top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">Home</a>
+    </div>
+    <nav class="collapse navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        <%for(i=0;i<nav.length;i++){%>
+        <li>
+          <a href="<%=nav[i].link%>"><%=nav[i].name%></a>
+        </li>
+        <%}%>
+      </ul>
+      <ul class="nav navbar-right navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
+          <ul class="dropdown-menu" style="padding:12px;">
+            <form class="form-inline">
+              <button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button><input type="text" class="form-control pull-left" placeholder="Search">
+            </form>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div id="masthead">  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <h1>Sign Up
+          <p class="lead"></p>
+        </h1>
+      </div>
+      <div class="col-md-5">
+        <div class="well well-lg"> 
+          <div class="row">
+            <div class="col-sm-12">
+              
+			
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div><!-- /cont -->
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="top-spacer"> </div>
+      </div>
+    </div> 
+  </div><!-- /cont -->
+  
+</div>
+
+
+<div class="container">
+  <div class="row">
+    
+    <div class="col-md-12"> 
+      
+      <div class="panel">
+        <div class="panel-body">
+          
+          
+          
+          <!--/stories-->
+         
+
+          <div class="col-lg-3 loginmargin">
+
+
+    
+           
+              <form action="index.ejs" onsubmit="return validate()">
+                <div class="form-group">
+                    <label for="inputEmail">First Name</label>
+                    <input type="text" class="form-control" id="inputfirst">
+                    <label id="first" style="color:red;visibility:hidden">Invalid</label>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail">Last Name</label>
+                    <input type="text" class="form-control" id="inputlast" >
+                    <label id="last" style="color:red;visibility:hidden">Invalid</label>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail">Email</label>
+                    <input type="text" class="form-control" id="inputEmail">
+                    <label id="lemail" style="color:red;visibility:hidden">Invalid</label>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword">Password</label>
+                    <input type="password" class="form-control" id="inputPassword" >
+                    <label id="lpwd" style="color:red;visibility:hidden">Invalid</label>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword">Confirm Password</label>
+                    <input type="password" class="form-control" id="rePassword">
+                    <label id="repwd" style="color:red;visibility:hidden">Invalid</label>
+                </div>
+               
+                <button type="submit" class="btn btn-primary">Sign in</button>
+            </form>
+         
+          <hr>
+          
+          
+          <!--/stories-->
+          
+          
+          
+        
+          
+        </div>
+      </div>
+                                                                                       
+	                                                
+                                                      
+   	</div><!--/col-12-->
+  </div>
+</div>
+                                                
+                                                                                
+
+
+
+	<!-- script references -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+    <script>
+      function validate()
+      {  
+          var fir=document.getElementById("inputfirst").value;
+          var las=document.getElementById("inputlast").value;
+          var email=document.getElementById("inputEmail").value;
+          let pwd=document.getElementById("inputPassword").value;
+          let repwd=document.getElementById("rePassword").value;
+          var regpwd=/^([a-zA-Z0-9]{8,20})$/;
+          var regexp= /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            
+          if(email=="" || pwd=="" || repwd=="" || fir=="" || las=="")
+          {
+              document.getElementById("first").innerHTML="Invalid";
+              document.getElementById("first").style.visibility="visible";
+              document.getElementById("first").style.color="red";
+              document.getElementById("last").innerHTML="Invalid";
+              document.getElementById("last").style.visibility="visible";
+              document.getElementById("last").style.color="red";
+              document.getElementById("lemail").innerHTML="Invalid";
+              document.getElementById("lemail").style.visibility="visible";
+              document.getElementById("lemail").style.color="red";
+              document.getElementById("lpwd").innerHTML="Invalid";
+              document.getElementById("lpwd").style.visibility="visible";
+              document.getElementById("lpwd").style.color="red";
+              document.getElementById("repwd").innerHTML="Invalid";
+              document.getElementById("repwd").style.visibility="visible";
+              document.getElementById("repwd").style.color="red";
+          }
+          if((fir.length <=2) || (fir.length > 20))
+          {
+          document.getElementById("first").innerHTML="Invalid";
+          document.getElementById("first").style.visibility="visible";
+          document.getElementById("first").style.color="red";
+          return false;
+          }
+          if(!isNaN(fir))
+          {
+          document.getElementById("first").innerHTML="Invalid";
+          document.getElementById("first").style.visibility="visible";
+          document.getElementById("first").style.color="red";
+          return false;
+          }
+          if((fir.length > 2) || (fir.length <= 20))
+          {
+          document.getElementById("first").innerHTML="valid";
+          document.getElementById("first").style.visibility="visible";
+          document.getElementById("first").style.color="green";
+      
+          }
+         
+          if((las.length <=2) || (las.length > 20))
+          {
+          document.getElementById("last").innerHTML="Invalid";
+          document.getElementById("last").style.visibility="visible";
+          document.getElementById("last").style.color="red";
+          return false;
+          }
+          if(!isNaN(las))
+          {
+          document.getElementById("last").innerHTML="Invalid";
+          document.getElementById("last").style.visibility="visible";
+          document.getElementById("last").style.color="red";
+          return false;
+          }
+          if((las.length > 2) || (las.length <= 20))
+          {
+          document.getElementById("last").innerHTML="valid";
+          document.getElementById("last").style.visibility="visible";
+          document.getElementById("last").style.color="green";
+          
+          }
+              
+              
+          if(!regexp.test(email)){
+              document.getElementById("lemail").innerHTML="Invalid";
+              document.getElementById("lemail").style.visibility="visible";
+              document.getElementById("lemail").style.color="red";
+              return false;
+                          
+              }
+          if(regexp.test(email))
+          {
+            document.getElementById("lemail").innerHTML="valid";
+            document.getElementById("lemail").style.visibility="visible";
+            document.getElementById("lemail").style.color="green";
+              }
+
+          if(!regpwd.test(pwd)) {
+            document.getElementById("lpwd").innerHTML="Invalid";
+            document.getElementById("lpwd").style.visibility="visible";
+            document.getElementById("lpwd").style.color="red";
+            return false;
+          }
+          if(regpwd.test(pwd)) {
+            document.getElementById("lpwd").innerHTML="valid";
+            document.getElementById("lpwd").style.visibility="visible";
+            document.getElementById("lpwd").style.color="green";
+          
+          }
+          if(!regpwd.test(repwd)) {
+            document.getElementById("repwd").innerHTML="Invalid";
+            document.getElementById("repwd").style.visibility="visible";
+            document.getElementById("repwd").style.color="red";
+            return false;
+          }
+          if(regpwd.test(repwd)) {
+            document.getElementById("repwd").innerHTML="valid";
+            document.getElementById("repwd").style.visibility="visible";
+            document.getElementById("repwd").style.color="green";
+          
+          }
+          if(pwd === repwd)
+            {
+
+              return true;
+            }  
+          
+          
+            }
+          
+  
+      </script>
+	</body>
+</html>
